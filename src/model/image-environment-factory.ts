@@ -30,6 +30,7 @@ class ImageEnvironmentFactory {
       { name: 'UNITY_SERIAL', value: parameters.unitySerial },
       { name: 'UNITY_LICENSING_SERVER', value: parameters.unityLicensingServer },
       { name: 'UNITY_VERSION', value: parameters.editorVersion },
+      { name: 'UNITY_EXT_LOGGING', value: '1' },
       { name: 'USYM_UPLOAD_AUTH_TOKEN', value: process.env.USYM_UPLOAD_AUTH_TOKEN },
       { name: 'PROJECT_PATH', value: parameters.projectPath },
       { name: 'BUILD_TARGET', value: parameters.targetPlatform },
