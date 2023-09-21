@@ -61,6 +61,7 @@ class Docker {
             --rm \
             ${ImageEnvironmentFactory.getEnvVarString(parameters, additionalVariables)} \
             --env UNITY_SERIAL \
+            --env UNITY_EXT_LOGGING=1 \
             --env GITHUB_WORKSPACE=${dockerWorkspacePath} \
             --env GIT_CONFIG_EXTENSIONS \
             ${gitPrivateToken ? `--env GIT_PRIVATE_TOKEN="${gitPrivateToken}"` : ''} \
@@ -93,6 +94,7 @@ class Docker {
             --rm \
             ${ImageEnvironmentFactory.getEnvVarString(parameters)} \
             --env UNITY_SERIAL="${unitySerial}" \
+            --env UNITY_EXT_LOGGING=1 \
             --env GITHUB_WORKSPACE=c:${dockerWorkspacePath} \
             ${gitPrivateToken ? `--env GIT_PRIVATE_TOKEN="${gitPrivateToken}"` : ''} \
             --volume "${workspace}":"c:${dockerWorkspacePath}" \
