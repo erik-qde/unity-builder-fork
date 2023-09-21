@@ -180,6 +180,10 @@ class Input {
     return Input.getInput('androidSymbolType') || 'none';
   }
 
+  static get logFile(): string {
+    return Input.getInput('logFile') || '';
+  }
+
   static get sshAgent(): string {
     return Input.getInput('sshAgent') || '';
   }

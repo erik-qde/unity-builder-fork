@@ -85,6 +85,10 @@ inputs:
     required: false
     default: 'none'
     description: 'The android symbol type to export. Should be "none", "public" or "debugging".'
+  logFile:
+    required: false
+    default: ''
+    description: 'The path where the Unity output is written to.'
   sshAgent:
     required: false
     default: ''

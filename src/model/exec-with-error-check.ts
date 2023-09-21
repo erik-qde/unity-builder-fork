@@ -1,4 +1,6 @@
 import { getExecOutput, ExecOptions } from '@actions/exec';
+import Input from './input';
+import * as fs from 'fs';
 
 export async function execWithErrorCheck(
   commandLine: string,
@@ -7,6 +9,10 @@ export async function execWithErrorCheck(
   errorWhenMissingUnityBuildResults: boolean = true,
 ): Promise<number> {
   const result = await getExecOutput(commandLine, arguments_, options);
+
+  if (Input.logFile !== '') {
+    fs.writeFile(Input.logFile, result.stdout, () => {});
+  }
 
   if (!errorWhenMissingUnityBuildResults) {
     return result.exitCode;
