@@ -40,6 +40,7 @@ class BuildParameters {
   public androidSdkManagerParameters!: string;
   public androidExportType!: string;
   public androidSymbolType!: string;
+  public logFile!: string;
 
   public customParameters!: string;
   public sshAgent!: string;
@@ -151,6 +152,7 @@ class BuildParameters {
       androidSdkManagerParameters,
       androidExportType: Input.androidExportType,
       androidSymbolType: androidSymbolExportType,
+      logFile: Input.logFile,
       customParameters: Input.customParameters,
       sshAgent: Input.sshAgent,
       sshPublicKeysDirectoryPath: Input.sshPublicKeysDirectoryPath,
